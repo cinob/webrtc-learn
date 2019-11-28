@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>webrtc capture video and audio</title>
+  <style>
+    .none {
+      -webkit-filter: none;
+    }
+    .blur {
+      -webkit-filter: blur(3px);
+    }
+    .grayscale {
+      -webkit-filter: grayscale(1);
+    }
+    .invert {
+      -webkit-filter: invert(1);
+    }
+    .sepia {
+      -webkit-filter: sepia(1);
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <label>audio Source:</label>
+    <select id="audioSource"></select>
+  </div>
+  <div>
+    <label>audio Output:</label>
+    <select id="audioOutput"></select>
+  </div>
+  <div>
+    <label>video Source:</label>
+    <select id="videoSource"></select>
+  </div>
+  <div>
+    <label>Filter:</label>
+    <select id="filter">
+      <option value="none">None</option>
+      <option value="blur">blur</option>
+      <option value="grayscale">grayscale</option>
+      <option value="invert">invert</option>
+      <option value="sepia">sepia</option>
+    </select>
+  </div>
+  <table>
+    <tr>
+      <td><video autoplay playsinline id="player"></video></td>
+      <td><video playsinline id="recplayer"></video></td>
+      <td><div id="constraints" class="output"></div></td>
+    </tr>
+    <tr>
+      <rd><button id="record">Start Record</button></rd>
+      <rd><button id="recplay" disabled>Play</button></rd>
+      <rd><button id="download" disabled>Download</button></rd>
+    </tr>
+  </table>
+  <!-- <audio autoplay controls id="audioplayer"></audio> -->
+  <div>
+    <button id="snapshot">Take snapshot</button>
+  </div>
+  <div>
+    <canvas id="picture"></canvas>
+  </div>
+</body>
+<script src="./client.js"></script>
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"> </script>
+</html>
